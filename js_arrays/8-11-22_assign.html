@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var teamSouthafrica = [
+            {
+                name: "Bavuma",
+                runs: 5,
+                balls: 6,
+                fours: 0,
+                sixes: 0,
+                sr: 33.33
+            },
+            {
+                name: "de kock",
+                runs: 0,
+                balls: 38,
+                fours: 7,
+                sixes: 3,
+                sr: 165
+            },
+            {
+                name: "Rossouw",
+                runs: 109,
+                balls: 56,
+                fours: 7,
+                sixes: 8,
+                sr: 194
+            },
+            {
+                name: "stubbs",
+                runs: 2,
+                balls: 7,
+                fours: 1,
+                sixes: 0,
+                sr: 100
+            },
+            {
+                name: "Makram",
+                runs: 10,
+                balls: 11,
+                fours: 1,
+                sixes: 0,
+                sr: 90
+            },]
+
+        var totalScore = teamSouthafrica.reduce((initialValue, player) => {
+            if (initialValue.runs>=0) {
+                return initialValue.runs + player.runs
+            } else {
+                return initialValue + player.runs
+            }
+
+        })
+        document.write("Totalscore of southafrica:" + totalScore + "<br>")
+
+        var totalfours = teamSouthafrica.reduce((initialValue, player) => {
+            if (initialValue.fours == 0) {
+                return initialValue.fours + player.fours
+            } else {
+                return initialValue + player.fours
+            }
+        })
+        document.write("Totalfours of southafrica:" + totalfours + "<br>")
+
+
+        var totalsixes = teamSouthafrica.reduce((initialValue, player) => {
+            if (initialValue.sixes == 0) {
+                return initialValue.sixes + player.sixes
+            } else {
+                return initialValue + player.sixes
+            }
+        })
+        document.write("Totalsixes of southafrica:" + totalsixes + "<br>")
+
+        var lowestruns = teamSouthafrica.reduce(function (a, b) {
+            if (Object.values(a).length > 0) {
+                return Math.min(a.runs, b.runs);
+            } else {
+                return Math.min(a, b.runs);
+            }
+        });
+        // console.log("lowestruns", lowestruns);
+        // document.write(lowestruns)
+
+        var lowestrunsplayers = teamSouthafrica.filter((player) => {
+            // console.log(player)
+            return player.runs == lowestruns
+
+        })
+        lowestrunsplayers.forEach((player) => {
+
+            document.write("name of lowestruns hit player:" + player.name+"-"+player.runs + "<br>")
+
+        })
+        
+        // document.write("lowestruns in southafrica:" + lowestruns + "<br>")
+
+
+
+        var highestruns = teamSouthafrica.reduce(function (a, b) {
+            if (Object.values(a).length > 0) {
+                return Math.max(a.runs, b.runs);
+            } else {
+                return Math.max(a, b.runs);
+            }
+        });
+        console.log("highestruns", highestruns);
+
+        var highestrunsplayers = teamSouthafrica.filter((player) => {
+            console.log(player)
+            return player.runs == highestruns
+
+        })
+        highestrunsplayers.forEach((player) => {
+
+            document.write("name of highestruns hit player:" + player.name + "<br>")
+
+        })
+        document.write("highestruns in southafrica:" + highestruns+"<br>")
+
+
+
+        var lowestrikerate = teamSouthafrica.reduce(function (a, b) {
+            if (Object.values(a).length > 0) {
+                return Math.min(a.sr, b.sr);
+            } else {
+                return Math.min(a, b.sr);
+            }
+        });
+        console.log("lowestrikerate", lowestrikerate);
+
+        var lowestrikerateplayers = teamSouthafrica.filter((player) => {
+            console.log(player)
+            return player.sr == lowestrikerate
+
+        })
+        lowestrikerateplayers.forEach((player) => {
+
+            document.write("name of lowestrikeratepalyer hit player:" + player.name + "<br>")
+
+        })
+        document.write("lowestrikeratepalyer in southafrica:" + lowestrikerate + "<br>")
+
+
+        var highestrikerate = teamSouthafrica.reduce(function (a, b) {
+            if (Object.values(a).length > 0) {
+                return Math.max(a.sr, b.sr);
+            } else {
+                return Math.max(a, b.sr);
+            }
+        });
+        console.log("highestrikerate", highestrikerate);
+
+        var highestrikerateplayers = teamSouthafrica.filter((player) => {
+            console.log(player)
+            return player.sr == highestrikerate
+
+        })
+        highestrikerateplayers.forEach((player) => {
+
+            document.write("name of highestrikeratepalyer hit player:" + player.name + "<br>")
+
+        })
+        document.write("highestrikeratepalyer in southafrica:" + highestrikerate)
+
+    </script>
+</body>
+
+</html>
