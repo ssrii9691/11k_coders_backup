@@ -5,24 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .mydata {
+        float: left;
+      }
+      .left {
+        width: 20%;
+      }
+      .right {
+        width: 80%;
+      }
+      #updateUserBtn {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <button onclick="getDataFromServer()">Get Data</button>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>ID</th>
-         <th>Email</th>
-          <th>Username</th>
-          <th>Password</th>
-          <!-- <th>EDIT</th> -->
-          <th>DELETE</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div class="mydata left">
+      <form action="">
+        <label for="id">id:</label>
+        <input type="text" name="" id="id" disabled /><br />
+        <label for="fname">fname:</label>
+        <input type="text" name="" id="fname" /><br />
+        <label for="lname">lname:</label>
+        <input type="text" name="" id="lname" /><br />
+        <label for="tel">tel:</label>
+        <input type="tel" name="" id="tel" /><br />
+        <label for="city">city:</label>
+        <input type="text" name="" id="city" /><br />
+        <label for="address">address:</label>
+
+        <input type="text" name="" id="address" /><br />
+        <label for="state">state:</label>
+        <input type="text" name="" id="state" /><br />
+        <label for="zip">zip:</label>
+        <input type="tel" name="" id="zip" /><br /><br />
+        <button
+          id="createUserBtn" type="button"  onclick="createUser()"  > Create User
+        </button>
+        <button id="updateUserBtn" onclick="updateUser()">update User</button>
+      </form>
+    </div>
+    <!-- <button onclick="getDataFromServer()">Get Data</button> -->
+    <div class="mydata right">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>fname</th>
+            <th>lname</th>
+            <th>tel</th>
+            <th>address</th>
+            <th>city</th>
+            <th>state</th>
+            <th>zip</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <!-- <button onclick="getDataFromServer()">Get Data</button> -->
     <script>
-      var local_api_url = "http://localhost:3000/user";
+      var local_api_url = "http://localhost:3000/user/";
 
       var users = [];
       function getDataFromServer() {
@@ -50,7 +96,12 @@
             myTd.innerHTML = user[a];
             myTr.appendChild(myTd);
           }
-       
+          var editTd = document.createElement("td");
+          var editBtn = document.createElement("button");
+          editBtn.innerHTML = "EDIT";
+          editBtn.setAttribute("onclick", "editUser(" + i + ")");
+          editTd.appendChild(editBtn);
+          myTr.appendChild(editTd);
 
           var deleteTd = document.createElement("td");
           var deleteBtn = document.createElement("button");
@@ -61,20 +112,78 @@
           document.querySelector("tbody").appendChild(myTr);
         });
       }
+      function readValuesFromForm() {
+        var user = {
+          id:"",
+          fname:"",
+          lname:"",
+          tel:"",
+          address:"",
+          city:"",
+          state:"",
+          zip:"",
+        };
+        for (a in user) {
+          user[a] = document.getElementById(a).value;
+        }
+        return user;
+      }
 
+      function editUser(i) {
+        var userToBeEdited = users[i];
+        for (a in userToBeEdited) {
+          document.getElementById(a).value = userToBeEdited[a];
+        }
+        swapButtons(true);
+      }
+      function updateUser() {
+        var newUser = readValuesFromForm();
+        var createUser = new XMLHttpRequest();
+        createUser.onreadystatechange = function () {
+          if (createUser.readyState == 4 && createUser.status == 200) {
+            getDataFromServer();
+          }
+        };
+        createUser.open("PUT", local_api_url + newUser.id);
+        createUser.setRequestHeader("Content-Type", "application/json");
+        createUser.send(JSON.stringify(newUser));
+      }
 
       function deleteUser(i) {
-        console.log(i)
+        console.log(i);
         var delUser = new XMLHttpRequest();
         delUser.onreadystatechange = function () {
           if (delUser.readyState == 4 && delUser.status == 200) {
             getDataFromServer();
           }
         };
-        delUser.open("DELETE", local_api_url +"/"+ users[i].id);
-        console.log(local_api_url + users[i].id)
-        console.log( users[i].id)
-        delUser.send()
+        delUser.open("DELETE", local_api_url + "/" + users[i].id);
+        console.log(local_api_url + users[i].id);
+        console.log(users[i].id);
+        delUser.send();
+      }
+      function createUser() {
+        var newUser = readValuesFromForm();
+        // console.log(newUser);
+        var createUser = new XMLHttpRequest();
+        createUser.onreadystatechange = function () {
+          if (createUser.readyState == 4 && createUser.status == 201) {
+            getDataFromServer();
+          }
+        };
+        createUser.open("POST", local_api_url);
+        createUser.setRequestHeader("content-Type", "application/json");
+        createUser.send(JSON.stringify(newUser));
+      }
+
+      function swapButtons(val) {
+        if (val) {
+          document.getElementById("createUserBtn").style.display = "none";
+          document.getElementById("updateUserBtn").style.display = "block";
+        } else {
+          document.getElementById("createUserBtn").style.display = "block";
+          document.getElementById("updateUserBtn").style.display = "none";
+        }
       }
     </script>
   </body>
