@@ -121,7 +121,7 @@
           address:"",
           city:"",
           state:"",
-          zip:"",
+          zip:""
         };
         for (a in user) {
           user[a] = document.getElementById(a).value;
@@ -131,11 +131,14 @@
 
       function editUser(i) {
         var userToBeEdited = users[i];
+       
         for (a in userToBeEdited) {
           document.getElementById(a).value = userToBeEdited[a];
         }
         swapButtons(true);
       }
+
+
       function updateUser() {
         var newUser = readValuesFromForm();
         var createUser = new XMLHttpRequest();
