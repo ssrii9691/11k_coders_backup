@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <table border="2">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>user id</th>
+          <th>date</th>
+          <th>products</th>
+          <th>__v</th>
+          <th>edit</th>
+          <th>delete</th>
+
+          <!-- <th rowspan="2">id</th>
+          <th rowspan="2">userId</th>
+          <th rowspan="2">date</th>
+          <th colspan="2" rowspan="1">products</th>
+
+          <th rowspan="2">__v</th> -->
+        </tr>
+        <!-- <tr>
+          <th>productId</th>
+          <th>quantity</th>
+        </tr> -->
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      var Details = [
+        {
+          id: 1,
+          userId: 1,
+          date: "2020-03-02T00:00:02.000Z",
+          products: [
+            { productId: 1, quantity: 4 },
+            { productId: 2, quantity: 1 },
+            { productId: 3, quantity: 6 },
+          ],
+          __v: 0,
+        },
+        {
+          id: 2,
+          userId: 1,
+          date: "2020-01-02T00:00:02.000Z",
+          products: [
+            { productId: 2, quantity: 4 },
+            { productId: 1, quantity: 10 },
+            { productId: 5, quantity: 2 },
+          ],
+          __v: 0,
+        },
+        {
+          id: 3,
+          userId: 2,
+          date: "2020-03-01T00:00:02.000Z",
+          products: [
+            { productId: 1, quantity: 2 },
+            { productId: 9, quantity: 1 },
+          ],
+          __v: 0,
+        },
+        {
+          id: 4,
+          userId: 3,
+          date: "2020-01-01T00:00:02.000Z",
+          products: [{ productId: 1, quantity: 4 }],
+          __v: 0,
+        },
+        {
+          id: 5,
+          userId: 3,
+          date: "2020-03-01T00:00:02.000Z",
+          products: [
+            { productId: 7, quantity: 1 },
+            { productId: 8, quantity: 1 },
+          ],
+          __v: 0,
+        },
+        {
+          id: 6,
+          userId: 4,
+          date: "2020-03-01T00:00:02.000Z",
+          products: [
+            { productId: 10, quantity: 2 },
+            { productId: 12, quantity: 3 },
+          ],
+          __v: 0,
+        },
+        {
+          id: 6,
+          userId: 8,
+          date: "2020-03-01T00:00:02.000Z",
+          products: [{ productId: 18, quantity: 1 }],
+          __v: 0,
+        },
+      ];
+      var fillteredUsers = [];
+      function displayDetails(Details) {
+        document.querySelector("tbody").innerHTML = "";
+        Details.forEach((detail, i) => {
+          console.log(detail);
+          var myTr = document.createElement("tr");
+          for (a in detail) {
+            var myTd = document.createElement("td");
+            if (a !== "products" && a !== "date") {
+              myTd.innerHTML = detail[a];
+              myTr.appendChild(myTd);
+            } else if (a == "products") {
+              var productTable = document.createElement("table");
+              detail[a].forEach((item) => {
+                console.log(item);
+                var myProdTr = document.createElement("tr");
+                for (c in item) {
+                  var ctd = document.createElement("td");
+                  ctd.innerHTML = c + ": " + item[c];
+                  myProdTr.appendChild(ctd);
+                }
+                productTable.appendChild(myProdTr);
+              });
+              myTd.appendChild(productTable);
+              myTr.appendChild(myTd);
+            } else if (a == "date") {
+              myTd.innerHTML = new Date(detail[a]).toDateString();
+              myTr.appendChild(myTd);
+            }
+          }
+
+          var editTd = document.createElement("td");
+          var editBtn = document.createElement("button");
+          editBtn.innerHTML = "EDIT";
+          editTd.appendChild(editBtn);
+          myTr.appendChild(editTd);
+
+          var deleteTd = document.createElement("td");
+          var deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          deleteBtn.innerHTML = "DELETE";
+          deleteTd.appendChild(deleteBtn);
+          myTr.appendChild(deleteTd);
+
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+      function deleteUser(i) {
+        if (fillteredUsers.length == 0) {
+          fillteredUsers = Details.filter((detail, index) => {
+            return detail.id !== Details[i].id;
+          });
+        } 
+        else {
+          fillteredUsers = fillteredUsers.filter((detail, index) => {
+            return detail.id !== fillteredUsers[i].id;
+          });
+        }
+
+        displayDetails(fillteredUsers);
+      }
+
+      function editUser() {}
+
+      displayDetails(Details);
+    </script>
+  </body>
+</html>

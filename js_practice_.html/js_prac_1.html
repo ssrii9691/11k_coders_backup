@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th colspan="5">Address</th>
+          <th rowspan="2">ID</th>
+          <th rowspan="2">Email</th>
+          <th rowspan="2">Username</th>
+          <th rowspan="2">Password</th>
+          <th rowspan="1" colspan="2">Name</th>
+          <th rowspan="2">Phone</th>
+          <th rowspan="2">DELETE</th>
+        </tr>
+        <tr>
+          <th>Geoloation</th>
+          <th>City</th>
+          <th>Street</th>
+          <th>Number</th>
+          <th>Zip Code</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="./data.js"></script>
+    <script>
+      var overusers = [];
+      function displayoverall(overall) {
+        document.querySelector("tbody").innerHTML = "";
+        overall.forEach((over, i) => {
+          var iTr = document.createElement("tr");
+          for (a in over) {
+            if (a == "address") {
+              var overobj = over[a];
+              for (b in overobj) {
+                var iTd = document.createElement("td");
+                if (b !== "geolocation") {
+                  iTd.innerHTML = overobj[b];
+                  iTr.appendChild(iTd);
+                } else {
+                  var cart = "";
+                  for (c in overobj[b]) {
+                    cart += c + ":" + overobj[b][c] + "<br>";
+                    console.log(cart);
+                  }
+                  iTd.innerHTML = cart;
+                  iTr.appendChild(iTd);
+                }
+              }
+            } else if (a == "name") {
+              for (N in over[a]) {
+                var myTd = document.createElement("td");
+                myTd.innerHTML = over[a][N];
+                iTr.appendChild(myTd);
+              }
+            } else if (a !== "__v") {
+              var myTd = document.createElement("td");
+              myTd.innerHTML = over[a];
+              iTr.appendChild(myTd);
+            }
+          }
+
+          var dltTd = document.createElement("td");
+          var dltbtn = document.createElement("button");
+          dltbtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          dltbtn.innerHTML = "delete";
+          dltTd.appendChild(dltbtn);
+          iTr.appendChild(dltTd);
+
+          document.querySelector("tbody").appendChild(iTr);
+        });
+      }
+      function deleteUser(i) {
+        if (overusers.length == 0) {
+          overusers = overall.filter((over, index) => {
+            return over.id !== overall[i].id;
+          });
+        } else {
+          overusers = overusers.filter((over, index) => {
+            return over.id !== overusers[i].id;
+          });
+        }
+        displayoverall(overusers);
+      }
+
+      displayoverall(overall);
+    </script>
+  </body>
+</html>

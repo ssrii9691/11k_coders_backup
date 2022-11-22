@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   
+    <form>
+        <label for="fname">First Name : </label>
+        <input type="text" name="" id="fname"> <br> 
+        <label for="lname">Last Name : </label>
+        <input type="text" name="" id="lname"> <br> 
+      
+        <!-- <button onclick="getValues()" type="button">Get Values</button> -->
+
+        <button type="button" onclick="setValues()">Set Value</button>
+    </form>
+
+    <script>
+        function getValues(){
+            var fname=document.getElementById("fname").value
+
+            console.log(fname)
+        }
+
+        function setValues(){
+            var fname = "Ram Kumar";
+            var lname ="SSS"
+            document.getElementById("fname").value = fname
+            document.getElementById("lname").value = lname
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="getDataFromServer()">Get Data</button>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+         <th>Email</th>
+          <th>Username</th>
+          <th>Password</th>
+          <!-- <th>EDIT</th> -->
+          <th>DELETE</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      var local_api_url = "http://localhost:3000/user";
+
+      var users = [];
+      function getDataFromServer() {
+        console.log("getDataFromServer called !!");
+        var getdata = new XMLHttpRequest();
+        getdata.onreadystatechange = function () {
+          if (getdata.readyState == 4 && getdata.status == 200) {
+            users = JSON.parse(getdata.response);
+            displayUsers(users);
+            console.log(users);
+          }
+        };
+
+        getdata.open("GET", local_api_url);
+        getdata.send();
+      }
+      getDataFromServer();
+
+      function displayUsers(users) {
+        document.querySelector("tbody").innerHTML = "";
+        users.forEach((user, i) => {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = user[a];
+            myTr.appendChild(myTd);
+          }
+       
+
+          var deleteTd = document.createElement("td");
+          var deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          deleteBtn.innerHTML = "DELETE";
+          deleteTd.appendChild(deleteBtn);
+          myTr.appendChild(deleteTd);
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+
+
+      function deleteUser(i) {
+        console.log(i)
+        var delUser = new XMLHttpRequest();
+        delUser.onreadystatechange = function () {
+          if (delUser.readyState == 4 && delUser.status == 200) {
+            getDataFromServer();
+          }
+        };
+        delUser.open("DELETE", local_api_url +"/"+ users[i].id);
+        console.log(local_api_url + users[i].id)
+        console.log( users[i].id)
+        delUser.send()
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>username</th>
+                <th>password</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var details = [
+            {
+                "id": 139,
+                "email": "NReyach@convallis.net",
+                "username": "SKnaus",
+                "password": "Xt8n2"
+            },
+            {
+                "id": 140,
+                "email": "GKerkemeyer@donec.net",
+                "username": "RHowell",
+                "password": "s7K4q"
+            },
+            {
+                "id": 141,
+                "email": "HHutchison@vitae.gov",
+                "username": "VShofstahl",
+                "password": "nvx4j"
+            },
+            {
+                "id": 142,
+                "email": "FGardana@lacus.io",
+                "username": "THaglund",
+                "password": "LYghl"
+            },
+            {
+                "id": 143,
+                "email": "DHerbert@fringilla.ly",
+                "username": "ARuback",
+                "password": "23pSJ"
+            },
+            {
+                "id": 144,
+                "email": "MDodd@sed.org",
+                "username": "BHarkey",
+                "password": "E6dsI"
+            },
+            {
+                "id": 145,
+                "email": "VParker@id.net",
+                "username": "XOckerman",
+                "password": "lDJu3"
+            },
+            {
+                "id": 146,
+                "email": "JStevens@vestibulum.net",
+                "username": "TDauk",
+                "password": "bD03i"
+            },
+            {
+                "id": 147,
+                "email": "CBuxton@pretium.com",
+                "username": "MWarner",
+                "password": "z0kf3"
+            },
+            {
+                "id": 148,
+                "email": "SShauna@etiam.ly",
+                "username": "RBolton",
+                "password": "iKR7u"
+            }
+        ]
+
+
+        details.forEach((det) => {
+            var iTr = document.createElement("tr")
+
+            for (a in det) {
+                var iTd = document.createElement("td");
+                iTd.innerHTML = det[a];
+                iTr.appendChild(iTd)
+            }
+            document.querySelector("tbody").appendChild(iTr)
+        })
+    </script>
+</body>
+
+</html>

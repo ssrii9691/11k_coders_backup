@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form{
+        
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        border: 2px solid black;
+        border-radius: 20px 0px;
+        background-color: darkorange;
+        padding: 20px;
+
+      }
+      button{
+        padding: 4px;
+        margin: 10px;
+        border-radius: 3px;
+      }
+      input{
+        float:right;
+        outline: none;
+    
+  border-left: none;
+  border-right: none;
+  border-top: none;
+      }
+      textarea{
+        outline: none;
+        
+      }
+    </style>
+  </head>
+  <body>
+    
+    <form>
+      <h2>HTML Form</h2>
+      <label for="fname">First Name:</label>
+      <input type="text" name="fname" value="" id="fname"/><br /><br />
+      <label for="lname">Last Name:</label>
+      <input type="text" name="lname" value="" id="lname"/><br /><br />
+      <label for="date of birth">Date of Birth:</label>
+      <input type="text" name="dob" value="" id="dob"/><br /><br />
+      <label for="email">Email:</label>
+      <input type="email" name="email" value="" id="email" /><br /><br />
+      <label for="mobilenumber">Mobile Number:</label>
+      <input type="tel" name="Mobile Number" value="" id="number" /><br /><br />
+      <button type="button"  onclick="getdata()">submit</button>
+      <button type="reset">Reset</button>
+      
+    </form>
+       
+
+    <script>
+          function getdata(){
+            var person={
+               fname:"",
+               lname:"",
+               dob:"",
+               email:"",
+               number:""
+            }
+            for (a in person){
+              person[a]=document.getElementById(a).value
+            }
+            console.log("person",person)
+          }
+    </script>
+  </body>
+</html>

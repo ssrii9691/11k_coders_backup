@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="getDataFromServer()">Get Data</button>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>fname</th>
+          <th>lname</th>
+          <th>tel</th>
+          <th>address</th>
+          <th>city</th>
+          <th>state</th>
+          <th>zip</th>
+          <th>delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      var my_url = "";
+      function getDataFromServer() {
+        console.log("commig.....");
+        var getdata = new XMLHttpRequest();
+        getdata.onreadystatechange = function () {
+          if (getdata.readyState == 4 && getdata.status == 200) {
+            makers = JSON.parse(getdata.response);
+            displayMakers(makers);
+            console.log(makers);
+          }
+        };
+        getdata.open("GET", my_url);
+        getdata.send();
+      }
+      getDataFromServer();
+      function displayMakers(makers) {
+        document.querySelector("tbody").innerHTML = "";
+        users.forEach((maker, i) => {
+          var myTr = document.createElement("tr");
+          for (a in maker) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = maker[a];
+            myTr.appendChild(myTd);
+          }
+          var deleteTd = document.createElement("td");
+          var deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          deleteBtn.innerHTML = "DELETE";
+          deleteTd.appendChild(deleteBtn);
+          myTr.appendChild(deleteTd);
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+      function deleteMaker(i){
+        console.log(i)
+        var delUser=new XMLHttpRequest();
+         delUser.onreadystatechange=function(){
+            if(delUser.readyState==4 && delUser.status==200){
+                getDataFromServer();
+            }
+        }
+        delUser.open("DELETE",my_url+"/"+makers[i].id)
+        delUser.send()
+      }
+
+    </script>
+  </body>
+</html>

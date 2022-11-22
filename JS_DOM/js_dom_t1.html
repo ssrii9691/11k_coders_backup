@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 1.1</title>
+</head>
+
+<body>
+    <table border="2"  style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>fname</th>
+                <th>lname</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+<script>
+    var creator =[
+    {
+        "fname": "Ora",
+        "lname": "Tippit"
+    },
+    {
+        "fname": "Verlene",
+        "lname": "Griffith"
+    },
+    {
+        "fname": "Mason",
+        "lname": "Bommi"
+    },
+    {
+        "fname": "Kim",
+        "lname": "Trautman"
+    },
+    {
+        "fname": "Mallika",
+        "lname": "Budgell"
+    },
+    {
+        "fname": "Wazir",
+        "lname": "Chacon"
+    },
+    {
+        "fname": "Shaneka",
+        "lname": "Zamora"
+    },
+    {
+        "fname": "Sutman",
+        "lname": "Karma"
+    },
+    {
+        "fname": "Ahila",
+        "lname": "Kieras"
+    },
+    {
+        "fname": "Marlon",
+        "lname": "Lake"
+    }
+]
+    
+    
+    creator.forEach((user)=>{
+    var myTr = document.createElement("tr")
+
+    for(a in user){
+    var myTd = document.createElement("td")
+         myTd.innerHTML=user[a];
+         myTr.appendChild(myTd)
+     }
+
+     document.querySelector("tbody").appendChild(myTr)
+    })
+</script>
+
+</html>

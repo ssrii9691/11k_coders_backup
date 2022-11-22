@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        display: inline;
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: aquamarine;
+        padding: 20px;
+      }
+      input {
+        float: right;
+        width: 80%;
+      }
+      button {
+        float: right;
+        margin-left: 40px;
+        background-color: lightslategray;
+        padding: 4px;
+        border-radius: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h2>Address</h2>
+      <hr />
+      <br />
+      <form>
+        <label for="street"
+          >street: <input type="text" value="" id="street" /><br /><br />
+          <input type="text" id="stre" style="margin-left: 43px" /> </label
+        ><br /><br />
+        <label
+          >city,state:
+          <input
+            type="text"
+            name="city"
+            id="city"
+            style="width: 13%; margin-left: 20px"
+          />
+          <input
+            type="text"
+            name="state"
+            id="state"
+            style="width: 60%"
+          /> </label
+        ><br /><br />
+        <label for="zipcode"
+          >zip code: <input type="tel" name="zipcode" id="code" /> </label
+        ><br /><br />
+        <label for="country"
+          >country: <input type="text" name="country" id="country" /> </label
+        ><br /><br />
+        <button type="reset" style="width: 80px">cancel</button>
+        <button type="button" onclick="getdata()" style="width: 80px">
+          ok
+        </button>
+      </form>
+    </div>
+    <script>
+      function getdata() {
+        var person = {
+          street: "",
+          stre: "",
+          city: "",
+          state: "",
+
+          code: "",
+          country: "",
+        };
+        for (a in person) {
+          person[a] = document.getElementById(a).value;
+        }
+        console.log("person", person);
+      }
+    </script>
+  </body>
+</html>

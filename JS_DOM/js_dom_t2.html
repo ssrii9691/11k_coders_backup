@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 1.2</title>
+</head>
+<body>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>fname</th>
+                <th>lname</th>
+                <th>tel</th>
+                <th>address</th>
+                <th>city</th>
+                <th>state</th>
+                <th>zip</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var maker=[
+    {
+        "fname": "Delia",
+        "lname": "Best",
+        "tel": "(127)456-6123",
+        "address": "8474 Nullam Ave",
+        "city": "Boynton Beach",
+        "state": "RI",
+        "zip": 48137
+    },
+    {
+        "fname": "Dante",
+        "lname": "Spencer",
+        "tel": "(202)602-8581",
+        "address": "1319 Amet Rd",
+        "city": "Clayton",
+        "state": "ME",
+        "zip": 80137
+    },
+    {
+        "fname": "Curtis",
+        "lname": "Fitzgerald",
+        "tel": "(345)338-3586",
+        "address": "871 Adipiscing St",
+        "city": "Pawleys Island",
+        "state": "KY",
+        "zip": 43912
+    },
+    {
+        "fname": "Michele",
+        "lname": "Lacrosse",
+        "tel": "(869)990-7529",
+        "address": "6430 Massa Ave",
+        "city": "Issaquah",
+        "state": "WI",
+        "zip": 29977
+    },
+    {
+        "fname": "Whitney",
+        "lname": "Schwartzberg",
+        "tel": "(153)361-4906",
+        "address": "2390 Molestie Ln",
+        "city": "Woodland Hills",
+        "state": "HI",
+        "zip": 77938
+    },
+    {
+        "fname": "Renita",
+        "lname": "Rager",
+        "tel": "(269)022-8671",
+        "address": "9950 Vitae Rd",
+        "city": "Decatur",
+        "state": "OR",
+        "zip": 93806
+    },
+    {
+        "fname": "Keefer",
+        "lname": "Dover",
+        "tel": "(978)737-2470",
+        "address": "9397 Nec Ave",
+        "city": "Topeka",
+        "state": "IN",
+        "zip": 80508
+    },
+    {
+        "fname": "Shelly",
+        "lname": "Wooten",
+        "tel": "(588)790-2837",
+        "address": "6865 Donec Dr",
+        "city": "Holland",
+        "state": "CT",
+        "zip": 82265
+    },
+    {
+        "fname": "Kofi",
+        "lname": "Proctor",
+        "tel": "(662)463-8067",
+        "address": "4285 Tincidunt Ln",
+        "city": "Castle Rock",
+        "state": "WI",
+        "zip": 92954
+    },
+    {
+        "fname": "Muhammad",
+        "lname": "Tabor",
+        "tel": "(969)963-6310",
+        "address": "3964 Lacus Ave",
+        "city": "Nauvoo",
+        "state": "UT",
+        "zip": 55595
+    }
+]
+    maker.forEach((lists)=>{
+        var mytr=document.createElement("tr")
+
+        Object.values(lists).forEach((val)=>{
+        console.log(val)
+        var myTd = document.createElement("td")
+        myTd.innerHTML=val;
+        mytr.appendChild(myTd)
+    })
+    document.querySelector("tbody").appendChild(mytr)
+    })
+
+
+    </script>
+</body>
+</html>

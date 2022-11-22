@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <fieldset>
+            <legend>Registration Details</legend>
+            <form >
+                <label for="university">university:
+                    <input type="text" name="university" id="university">
+                </label><br>
+                <label for="Institute">Institute:
+                    <input type="text" name="Institute" id="Institute">
+                </label><br>
+                <label for="branch">Branch:
+                    <select name="branch" id="branch">
+                        <option value="--select--">--select--</option>
+                        <option value="eee">eee</option>
+                        <option value="ece">ece</option>
+                        <option value="cse">cse</option>
+                        <option value="mech">mech</option>
+                    </select>
+                </label><br>
+                <label for="degree">degree:
+                    <select name="degree" id="degree">
+                        <option value="--select--">--select--</option>
+                        <option value="Mtech">Mtech</option>
+                        <option value="Btech">Btech</option>
+                        <option value="Diploma">Diploma</option>
+                    </select>
+                </label>
+                <input type="radio" name="completed" id="purs" >pursuing
+                <input type="radio" name="completed" id="completed" >completed <br>
+                <label >
+                    Average CPI: <input type="number" name="cpi" id="cpi"style="width: 3%;">
+                    upto: <input type="number" name="num" id="num"style="width: 3%;">Th semester <br>
+                </label>
+                <label>Experience:
+                    <input type="number" name="exp" id="exp" style="width: 3%;">years
+                </label><br>
+                <label>Your Website Or Blog:
+                    <input type="link" name="blog" id="blog">
+                </label><br>
+                <button type="button" onclick="getdata()">OK</button>
+
+            </form>
+        </fieldset>
+    </div>
+    <script>
+        function getdata(){
+            var person = {
+              university:"",
+              Institute:"",
+              branch:"",
+              degree:"",
+              purs:"",
+              completed:"",
+              cpi:"",
+              num:"",
+              exp:"",
+              blog:""
+          
+        };
+        for (a in person) {
+          if (a !== "") {
+            person[a] = document.getElementById(a).value;
+          } else if (a =="") {
+            var allRadioBtns = document.getElementsByName("gender");
+            allRadioBtns.forEach((element) => {
+              if (element.checked) {
+                person.gender = element.value;
+              }
+            });
+        }
+    }
+}
+    </script>
+</body>
+</html>
