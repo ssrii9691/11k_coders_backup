@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.synchronous step by step
+        // 2.asynchronopus
+
+
+        // function displayfirstname(){
+        //     setTimeout(()=>{
+        //         document.write("sai")
+        //     },4000)
+        // }
+        // function displaylastname(){
+        //     document.write("kumar")
+        // }
+        // displayfirstname()
+        // displaylastname()
+
+
+
+         var users=[]
+         function getallfromserver(){
+            var getdata=new XMLHttpRequest()
+            getdata.onreadystatechange=function(){
+                if(getdata.readyState==4 && getdata.status==200){
+                    users=JSON.parse(getdata.response)
+                    console.log("user displayfirst:",users)
+                }
+            }
+            getdata.open("GET","http://localhost:3000/product/")
+            getdata.send()
+         }
+         function displayallusers(){
+            console.log("users inside display all users:",users)
+         }
+         getallfromserver();
+        displayallusers()
+    </script>
+</body>
+</html>

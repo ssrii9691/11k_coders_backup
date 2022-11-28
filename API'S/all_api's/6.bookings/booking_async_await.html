@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var params = { base_currency: "USD", languagecode: "en-us" };
+      function formatParams(params) {
+        return (
+          "?" +
+          Object.keys(params)
+            .map(function (key) {
+              return key + "=" + encodeURIComponent(params[key]);
+            })
+            .join("&")
+        );
+      }
+
+      var bookings = [];
+      function getInfo() {
+        return new Promise((resolve,reject) => {
+          var booking = new XMLHttpRequest();
+          booking.onreadystatechange = function () {
+            if (booking.readyState == 4 && booking.status == 200) {
+             resolve(JSON.parse(booking.response))
+            }
+          };
+
+          booking.open(
+            "GET",
+            "https://apidojo-booking-v1.p.rapidapi.com/currency/get-exchange-rates" +
+              formatParams(params)
+          );
+          booking.setRequestHeader(
+            "X-RapidAPI-Key",
+            "dedbbe3f2amshc2fa702364b71acp10a8fbjsn503c09bc5a91"
+          );
+          booking.setRequestHeader(
+            "X-RapidAPI-Host",
+            "apidojo-booking-v1.p.rapidapi.com"
+          );
+          booking.send();
+        });
+      }
+      console.log(formatParams(params));
+      
+
+      async function asyncdata(){
+        try {
+            var bookings=await getInfo();
+            console.log("i am from async await  try:",bookings)
+        } catch (error) {
+            console.log("i am from async await  catch:",bookings)
+        }
+      }
+      asyncdata()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var foody =[]
+        function getfoodBest(){
+            var getfood=new XMLHttpRequest
+            getfood.onreadystatechange=function(){
+                if(getfood.readyState==4&&getfood.status==200){
+                    foody = JSON.parse(getfood.response);
+                    console.log("gooooooo.....",foody)
+                };
+            } 
+            getfood.open("GET", 'https://burgers1.p.rapidapi.com/burgers');
+            getfood.setRequestHeader( 'X-RapidAPI-Key', 'dedbbe3f2amshc2fa702364b71acp10a8fbjsn503c09bc5a91')
+            getfood.setRequestHeader('X-RapidAPI-Host', 'burgers1.p.rapidapi.com')
+            getfood.send();
+        }
+        getfoodBest()
+    </script>
+</body>
+</html>

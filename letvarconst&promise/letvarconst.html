@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var
+      function switchNumber() {
+        for (var i = 0; i < 10; i++) {
+          console.log(i);
+        }
+        console.log("after execution of loop :", i);
+      }
+      switchNumber();
+
+      var myname = "sai";
+
+      var myname = "kumar";
+      console.log(myname);
+
+      // let
+      function switchNumber() {
+        for (let i = 0; i < 10; i++) {
+          console.log(i);
+        }
+        console.log("after execution of loop :", i);
+      }
+      switchNumber();
+
+    //   let myphn = "redmi";
+    //   let myphn = "vivo"; //doesnt allow the redeclare variable names in let
+
+
+      //const
+
+      function switchNumber() {
+        for (const i = 0; i < 10; i++) {
+          console.log(i);
+        }
+        console.log("after execution of loop :", i);
+      }
+      switchNumber();
+
+
+      //diff b/w let&const
+
+      let person="sai"
+      person="kumar"
+      console.log(person)
+
+
+      const car="volvo"
+      car="swift" //const doesnt allow ressigned values 
+    </script>
+  </body>
+</html>

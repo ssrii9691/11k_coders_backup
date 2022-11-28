@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var   params= {teamId: '1050'}
+       function formatParams(params) {
+        return (
+          "?" +
+          Object.keys(params).map(function (key) {
+            return key + "=" + encodeURIComponent(params[key]);
+          })
+          .join("&")
+        );
+      }
+
+      var vball = [];
+      function getInfo() {
+        var vb = new XMLHttpRequest();
+        vb.onreadystatechange = function () {
+          if (vb.readyState == 4 && vb.status == 200) {
+            vball = JSON.parse(vb.response);
+            console.log("vooleyball:",vball);
+          }
+        };
+        vb.open(
+          "GET",
+          'https://volleyball-data.p.rapidapi.com/team/schedule' +
+            formatParams(params)
+        );
+        vb.setRequestHeader(
+            'X-RapidAPI-Key', 'dedbbe3f2amshc2fa702364b71acp10a8fbjsn503c09bc5a91'
+        );
+        vb.setRequestHeader(
+            'X-RapidAPI-Host', 'volleyball-data.p.rapidapi.com'
+        );
+        vb.send();
+      }
+      console.log(formatParams(params));
+      getInfo();
+
+    </script>
+</body>
+</html>

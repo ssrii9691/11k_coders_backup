@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var footBall = [];
+
+      function getInfo() {
+        let getData = new XMLHttpRequest();
+        getData.onreadystatechange = function () {
+          if (getData.readyState == 4 && getData.status == 200) {
+            footBall = JSON.parse(getData.response);
+            console.log(" Info", footBall);
+          }
+        };
+        getData.open(
+          "GET",
+          "https://api-football-beta.p.rapidapi.com/timezone"
+        );
+        getData.setRequestHeader(
+          "X-RapidAPI-Key",
+          "f55afadb54msh9a226ca8c13ce9ap177567jsnbedee190261f"
+        );
+        getData.setRequestHeader(
+          "X-RapidAPI-Host",
+          "api-football-beta.p.rapidapi.com"
+        );
+        getData.send();
+      }
+      getInfo();
+    </script>
+  </body>
+</html>

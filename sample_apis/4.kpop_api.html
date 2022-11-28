@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var params= {id : 'tt1375666'};
+
+      function getData() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function () {
+          if (getInfo.readyState == 4 && getInfo.status == 200) {
+            data = JSON.parse(getInfo.response);
+            console.log(data)
+          }
+        };
+        getInfo.open("GET", "https://movie-details1.p.rapidapi.com/imdb_api/movie"+formatParams(params));
+        getInfo.setRequestHeader(
+          "X-RapidAPI-Key",
+          'dedbbe3f2amshc2fa702364b71acp10a8fbjsn503c09bc5a91'
+        );
+        getInfo.setRequestHeader("X-RapidAPI-Host",'movie-details1.p.rapidapi.com');
+        getInfo.send();
+      }
+
+      function formatParams(params) {
+        return (
+          "?" +
+          Object.keys(params)
+            .map(function (key) {
+              return key + "=" + encodeURIComponent(params[key]);
+            })
+            .join("&")
+        );
+      }
+      console.log(formatParams(params));
+      getData();
+    </script>
+  </body>
+</html>

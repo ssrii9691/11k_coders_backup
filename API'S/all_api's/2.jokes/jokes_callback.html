@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var jokes = [];
+  
+        function getInfo() {
+          let getData = new XMLHttpRequest();
+          getData.onreadystatechange = function () {
+            if (getData.readyState == 4 && getData.status == 200) {
+              jokes = JSON.parse(getData.response);
+              console.log(" Info", jokes);
+            }
+          };
+          getData.open(
+            "GET",
+            'https://dad-jokes.p.rapidapi.com/random/joke'
+          );
+          getData.setRequestHeader(
+            'X-RapidAPI-Key', 'dedbbe3f2amshc2fa702364b71acp10a8fbjsn503c09bc5a91'
+          );
+          getData.setRequestHeader(
+            'X-RapidAPI-Host', 'dad-jokes.p.rapidapi.com'
+          );
+          getData.send();
+        }
+        getInfo();
+      </script>
+</body>
+</html>

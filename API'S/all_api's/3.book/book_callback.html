@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var book=[]
+        function getbooks(){
+            var getbook=new XMLHttpRequest
+            getbook.onreadystatechange=function(){
+                if(getbook.readyState==4&&getbook.status==200){
+                    book= JSON.parse(getbook.response);
+                    console.log("books",book)
+                };
+            } 
+            getbook.open("GET","https://book4.p.rapidapi.com/");
+            getbook.setRequestHeader('X-RapidAPI-Key', 'dedbbe3f2amshc2fa702364b71acp10a8fbjsn503c09bc5a91')
+            getbook.setRequestHeader('X-RapidAPI-Host', 'book4.p.rapidapi.com')
+            getbook.send();
+        }
+        getbooks()
+    </script>
+</body>
+</html>

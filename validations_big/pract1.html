@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form>
+        <label for="fname">first name:</label>
+        <input type="text" name="" id="fname" onkeyup="checkuserinput()">
+        <p style="color: blue; display: none;">enter min 6 characters</p>
+        <button onclick="action()" type="button" disabled>
+          action
+        </button>
+    </form>
+    <script>
+        function checkuserinput(){
+            var userinput=document.getElementById("fname").value;
+            console.log("userinput")
+            if(userinput.length>=6){
+                document.querySelector("button").removeAttribute("disabled");
+                document.querySelector("p").style.display="none";
+                
+            }else{
+                document.querySelector("button").setAttribute("disabled",true)
+                document.querySelector("p").style.display="block"
+            }
+        }
+    </script>
+</body>
+</html>

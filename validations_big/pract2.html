@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label for="fname">first name:</label>
+        <input type="text" name="" id="fname" onkeyup="validinput()">
+        <label for="lname">last name:</label>
+        <input type="text" name="" id="lname" onkeyup="validinput()">
+        <button type="button" disabled> clickhere</button>
+    </form>
+    <script>
+        function validinput(){
+            var valid={
+                fname:"",
+                lname:""
+            }
+            for(a in valid){
+                valid[a]=document.getElementById(a).value
+            }
+          
+            var check=false;
+            if(valid.fname.length<4 || valid.lname.length<4){
+                check=true;
+                
+            }
+            if(check){
+                document.querySelector("button").removeAttribute("disabled")
+            }
+            
+            
+            else{
+            
+                document.querySelector("button").setAttribute("disabled",true)
+            }
+        }
+    </script>
+</body>
+</html>

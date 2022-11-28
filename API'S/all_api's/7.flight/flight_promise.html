@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var flights = [];
+
+      function getFlight() {
+        return new Promise((resolve,reject) => {
+          let getData = new XMLHttpRequest();
+          getData.onreadystatechange = function () {
+            if (getData.readyState == 4 && getData.status == 200) {
+              resolve( JSON.parse(getData.response))
+            }
+          };
+          getData.open(
+            "GET",
+            "https://flight-radar1.p.rapidapi.com/aircrafts/list"
+          );
+          getData.setRequestHeader(
+            "X-RapidAPI-Key",
+            "dedbbe3f2amshc2fa702364b71acp10a8fbjsn503c09bc5a91"
+          );
+          getData.setRequestHeader(
+            "X-RapidAPI-Host",
+            "flight-radar1.p.rapidapi.com"
+          );
+          getData.send();
+        });
+      }
+      getFlight()
+      .then((flights)=>{
+        console.log("i am from resolve ",flights)
+      })
+      .catch((flights)=>{
+        console.log("i am from reject ",flights)
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var music =[]
+        function getmusicBest(){
+            var getmusic=new XMLHttpRequest
+            getmusic.onreadystatechange=function(){
+                if(getmusic.readyState==4&&getmusic.status==200){
+                    music = JSON.parse(getmusic.response);
+                    console.log("music DJ-TILLU",music)
+                };
+            } 
+            getmusic.open("GET",'https://deezerdevs-deezer.p.rapidapi.com/infos');
+            getmusic.setRequestHeader('X-RapidAPI-Key', 'dedbbe3f2amshc2fa702364b71acp10a8fbjsn503c09bc5a91')
+            getmusic.setRequestHeader('X-RapidAPI-Host', 'deezerdevs-deezer.p.rapidapi.com')
+            getmusic.send();
+        }
+        getmusicBest()
+    </script>
+</body>
+</html>

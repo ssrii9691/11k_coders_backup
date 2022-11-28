@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .all {
+        float: left;
+      }
+      .left {
+        width: 20%;
+      }
+      .right {
+        width: 80%;
+      }
+      #updateProductBtn {
+        display: none;
+      }
+      
+      img {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="all left">
+      <form>
+        <label for="id">id:</label>
+        <input type="text" name="" id="id" disabled /><br />
+        <label for="title">title:</label>
+        <input type="text" name="" id="title" /><br />
+        <label for="price">price:</label>
+        <input type="tel" name="" id="price" /><br />
+        <label for="description">description:</label>
+        <input type="text" name="" id="description" /><br />
+        <label for="category">category:</label>
+        <input type="text" name="" id="category" /><br />
+        <label for="image">image:</label>
+
+        <input type="link" name="" id="image" /><br />
+        <label for="rating">rating:</label>
+        <input type="text" name="" id="rating" /><br />
+        <label for="rate">rate:</label>
+        <input type="tel" name="" id="rate" /><br />
+        <label for="count">count:</label>
+        <input type="text" name="" id="count" /><br />
+        <br />
+        <button id="createProductBtn" type="button" onclick="createProduct()">
+          Create Product
+        </button>
+        <button id="updateProductBtn" onclick="updateProduct()">
+          update Product
+        </button>
+      </form>
+    </div>
+    <div class="all right">
+      <table border="2">
+        <thead>
+          <tr>
+            <th rowspan="2">id</th>
+            <th rowspan="2">titile</th>
+            <th rowspan="2">price</th>
+            <th rowspan="2">description</th>
+            <th rowspan="2">category</th>
+            <th rowspan="2" >image</th>
+            <th colspan="2" rowspan="1">rating</th>
+            <th rowspan="2">edit</th>
+            <th rowspan="2">delete</th>
+          </tr>
+          <tr>
+            <th>rate</th>
+            <th>count</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script>
+      var my_url = "http://localhost:3000/product/";
+
+      var products = [];
+      function getDataFromServer() {
+        console.log("action....");
+        var getdata = new XMLHttpRequest();
+        getdata.onreadystatechange = function () {
+          if (getdata.readyState == 4 && getdata.status == 200) {
+            products = JSON.parse(getdata.response);
+            displayProducts(products);
+            console.log(products);
+          }
+        };
+        getdata.open("GET", my_url);
+        getdata.send();
+      }
+      getDataFromServer();
+
+      function displayProducts(products) {
+        document.querySelector("tbody").innerHTML = "";
+        products.forEach((product, i) => {
+          var myTr = document.createElement("tr");
+          for (a in product) {
+          var myTd = document.createElement("td");
+          if (a !== "image" && a !== "rating") {
+            myTd.innerHTML = product[a];
+            myTr.appendChild(myTd);
+          } else if (a == "image") {
+            var myImg = document.createElement("img");
+            myImg.setAttribute("src", product[a]);
+
+            myTd.appendChild(myImg);
+            myTr.appendChild(myTd);
+          } else if (a == "rating") {
+            var ratingObj = product[a];
+            for (b in ratingObj) {
+              var myRatingTd = document.createElement("td");
+              myRatingTd.innerHTML = ratingObj[b];
+              myTr.appendChild(myRatingTd);
+            }
+          }
+        }
+          var editTd = document.createElement("td");
+          var editBtn = document.createElement("button");
+          editBtn.innerHTML = "EDIT";
+          editBtn.setAttribute("onclick", "editUser(" + i + ")");
+          editTd.appendChild(editBtn);
+          myTr.appendChild(editTd);
+
+          var deleteTd = document.createElement("td");
+          var deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          deleteBtn.innerHTML = "DELETE";
+          deleteTd.appendChild(deleteBtn);
+          myTr.appendChild(deleteTd);
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+      function readValuesFromForm() {
+        var product = {
+          id:"",
+          title:"",
+          price:"",
+          description:"",
+          category:"",
+          image:"",
+          rating:{rate:"",
+          count:""},
+          // rate:"",
+          // count:""
+        };
+        for (a in product) {
+
+          var myTd = document.createElement("td");
+          var myTr = document.createElement("tr");
+          if (a !== "image" && a !== "rating") {
+            myTd.innerHTML = product[a];
+            myTr.appendChild(myTd);
+          } else if (a == "image") {
+            var myImg = document.createElement("img");
+            myImg.setAttribute("src", product[a]);
+
+            myTd.appendChild(myImg);
+            myTr.appendChild(myTd);
+          } else if (a == "rating") {
+            var ratingObj = product[a];
+            for (b in ratingObj) {
+              var myRatingTd = document.createElement("td");
+              myRatingTd.innerHTML = ratingObj[b];
+              myTr.appendChild(myRatingTd);
+            }
+          }
+        }
+        return product;
+      }
+
+      function editUser(i) {
+        var userToBeEdited = products[i];
+
+        for (a in userToBeEdited) {
+          if(a!=="rating"){
+            document.getElementById(a).value = userToBeEdited[a];
+          }else if (a == "rating") {
+            for (b in userToBeEdited[a]) {
+              document.getElementById(b).value =userToBeEdited[a][b]; 
+            }
+          }
+        }
+        swapButtons(true);
+      }
+      function updateProduct() {
+        var newUser = readValuesFromForm();
+        var createUser = new XMLHttpRequest();
+        createUser.onreadystatechange = function () {
+          if (createUser.readyState == 4 && createUser.status == 200) {
+            getDataFromServer();
+          }
+        };
+        createUser.open("PUT", my_url + newUser.id);
+        createUser.setRequestHeader("Content-Type", "application/json");
+        createUser.send(JSON.stringify(newUser));
+        // swapButtons(false);
+      }
+
+      function deleteUser(i) {
+        console.log(i);
+        var delUser = new XMLHttpRequest();
+        delUser.onreadystatechange = function () {
+          if (delUser.readyState == 4 && delUser.status == 200) {
+            getDataFromServer();
+          }
+        };
+        delUser.open("DELETE", my_url + "/" + products[i].id);
+        console.log(my_url + products[i].id);
+        console.log(products[i].id);
+        delUser.send();
+      }
+      function createProduct() {
+        var newUser = readValuesFromForm();
+        console.log(newUser);
+        var createUser = new XMLHttpRequest();
+        createUser.onreadystatechange = function () {
+          if (createUser.readyState == 4 && createUser.status == 201) {
+            getDataFromServer();
+          }
+        };
+        createUser.open("POST", my_url);
+        createUser.setRequestHeader("content-Type", "application/json");
+        createUser.send(JSON.stringify(newUser));
+      }
+
+      function swapButtons(val) {
+        if (val) {
+          document.getElementById("createProductBtn").style.display = "none";
+          document.getElementById("updateProductBtn").style.display = "block";
+        } else {
+          document.getElementById("createProductBtn").style.display = "block";
+          document.getElementById("updateProductBtn").style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
