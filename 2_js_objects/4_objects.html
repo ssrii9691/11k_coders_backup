@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // How many ways we can create Objects in JS
+      // 1. Literal Way
+      var person1 = {};
+      console.log(person1);
+
+      // 2. OOP way
+      // Creating An Object with Built in Method
+      var person2 = new Object({ fname: "Murali", lname: "Krishna" });
+      console.log(person2);
+
+      // Creating An Objet with Cunstructor function
+
+    //   function Person(email, phone, address, city) {
+    function Person(email, phone, address, city) {
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.city = city;
+    }
+
+      var person1 = new Person("murali@gmail.com",9663856625,"Whitefield","Bangalore")
+      var person2 = new Person(myEmail, myphone, myaddress, mycity)
+      console.log(person1);
+      console.log(person2)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+        console.log("From Outside ",this)
+      var person = {
+        fname: "Leela",
+        lname: "Khan",
+        tel: "(527)343-3333",
+        address: "5779 Orci Rd",
+        city: "Mesa",
+        state: "OH",
+        zip: 45867,
+        fullName : function (){
+            console.log("from Object :",this)
+            console.log(this.fname+" "+this.lname)
+        }
+      };
+
+    // person.fullName()
+      for( a in person ){
+        if(a !== "fullName" && a !== "tel" && a !== "zip"){
+            document.write(a+" : "+person[a]+"<br>")
+        }
+      }
+    </script>
+  </body>
+</html>

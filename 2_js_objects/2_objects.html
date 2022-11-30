@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello From HTML</h2>
+    <script>
+        var person = {
+            myName : 'Venky',
+            email:"murali@gmail.com",
+            mobile:9663856625
+        } ; 
+
+        person['city'] = "Bangalore" // Adding a Property with [] Notation
+        person['language'] = "Telugu";
+
+        // document.write("My Name : "+person.myName + "<br> Email : "+person.email+"<br> Mobile : "+person.mobile)
+        // document.write(person.myName+"<br>"+person.email+"<br>"+person.mobile)
+        // console.log(person)
+
+        for(var a in person){
+            document.write(a+" : "+ person[a]+"<br>")
+        }
+    </script>
+</body>
+</html>

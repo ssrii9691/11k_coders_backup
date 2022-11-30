@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var randomNumbers = [
+        585523, 809872, 436048, 772291, 192468, 365169, 909896, 310845, 589382,
+        594607,
+      ];
+      //   for (i = 0; randomNumbers.length < 10; i++) {
+      //     var rNumber = Math.round(Math.random() * 1000000);
+      //     if (String(rNumber).length == 6) {
+      //       randomNumbers.push(rNumber);
+      //     }
+      //   }
+      //   console.log(randomNumbers)
+      var newNumbers = randomNumbers;
+      var newNumbers = [...randomNumbers];
+      newNumbers[0] = 123456;
+      //   console.log(newNumbers)
+      console.log(randomNumbers);
+      //   console.log(...randomNumbers)
+      console.log(null, randomNumbers);
+      var minNumber = Math.min.apply(null, randomNumbers);
+      console.log("Min Number ",minNumber)
+      var minNumberValues = Math.min(
+        585523,
+        809872,
+        436048,
+        772291,
+        192468,
+        365169,
+        909896,
+        310845,
+        589382,
+        594607
+      );
+      console.log(minNumberValues);
+      var maxNumber = Math.max(null, randomNumbers);
+      console.log("maxNumber", maxNumber);
+      //   console.log(minNumber)
+    </script>
+  </body>
+</html>
