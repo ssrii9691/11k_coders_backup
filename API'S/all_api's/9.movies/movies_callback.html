@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+  <ul></ul>
     <script>
        var  params= {id: 'tt1375666'}
        function formatParams(params) {
@@ -26,6 +27,7 @@
           if (movie.readyState == 4 && movie.status == 200) {
             movies = JSON.parse(movie.response);
             console.log(movies);
+            // disaplayMoviedetails(movies)
           }
         };
         movie.open(
@@ -43,6 +45,15 @@
       }
       console.log(formatParams(params));
       getInfo();
+      // function disaplayMoviedetails(movies) {
+      //           movies.countries.forEach(() => {
+      //               var MyLi = document.createElement('li')
+      //               MyLi.innerHTML = a
+      //               document.querySelector("ul").appendChild(MyLi);
+      //               // console.log(a.titleText.text)
+      //           })
+      //           // console.log(data.results,typeof(data.results))
+      //       }
 
     </script>
 </body>

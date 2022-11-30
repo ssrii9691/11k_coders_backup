@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashLive Sports - rankings - Ranking Data</title>
+</head>
+
+<body>
+    <h1>Participant Names</h1>
+    <button onclick="clickMe(); this.onclick=null;">Click here to know the details</button>
+    <button onclick="handleAsyncData(); this.onclick=null;">Async and Await</button>
+    <button onclick="clickMeData(); this.onclick=null;">call back function</button>
+    <ol></ol>
+    <script>
+        var params = {
+            ranking_id: 'dSJr14Y8',
+            locale: 'en_INT'
+        }
+
+
+        // promise
+        function getDataFromServerPromise() {
+            return new Promise((resolve, reject) => {
+                var getdata = new XMLHttpRequest();
+                getdata.onreadystatechange = function () {
+                    if (getdata.readyState === 4 && getdata.status === 200) {
+                        data = JSON.parse(getdata.response);
+                        resolve(data);
+                        displayNames(data)
+                    }
+                }
+                getdata.open("GET", "https://flashlive-sports.p.rapidapi.com/v1/rankings/data" + formatParams(params));
+                getdata.setRequestHeader('X-RapidAPI-Key', '15c4636a2fmsh494bdb860eaf718p12a7dejsn2d43167ab1e0');
+                getdata.setRequestHeader('X-RapidAPI-Host', 'flashlive-sports.p.rapidapi.com');
+                getdata.send();
+            })
+        }
+
+        function formatParams(params) {
+            return "?" + Object
+                .keys(params)
+                .map(function (key) {
+                    return key + "=" + encodeURIComponent(params[key])
+                })
+                .join("&")
+        }
+
+        function clickMe() {
+            getDataFromServerPromise().then((data) => {
+                console.log(data);
+                data.DATA.forEach((element) => {
+                    // console.log(element)
+                    for (a in element) {
+                        console.log(element)
+                        if (a === "PARTICIPANT_NAME") {
+                            myLi = document.createElement("li");
+                            myLi.innerHTML = element[a];
+                            document.querySelector("ol").appendChild(myLi);
+                        }
+
+                    }
+                })
+            })
+        }
+
+        // async and await
+        async function handleAsyncData() {
+            data = await getDataFromServerPromise();
+            data.DATA.forEach((element) => {
+                // console.log(element)
+                for (a in element) {
+                    console.log(element)
+                    if (a === "PARTICIPANT_NAME") {
+                        myLi = document.createElement("li");
+                        myLi.innerHTML = element[a];
+                        document.querySelector("ol").appendChild(myLi);
+                    }
+
+                }
+            })
+        }
+
+        // call back function
+
+        function displayNames(data) {
+            data.DATA.forEach((element) => {
+                console.log(element)
+                for (a in element) {
+                    console.log(element)
+                    if (a === "PARTICIPANT_NAME") {
+                        myLi = document.createElement("li");
+                        myLi.innerHTML = element[a];
+                        document.querySelector("ol").appendChild(myLi);
+                    }
+
+                }
+            })
+        }
+        function clickMeData(){
+            getDataFromServerPromise();
+        }
+    </script>
+</body>
+
+</html>
