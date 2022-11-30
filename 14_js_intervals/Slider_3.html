@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 500px;
+            height: 300px;
+            cursor: pointer;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="1.jpg" alt="" onmouseover="stopSlide()" onmouseout="startSlide()">
+        <p style="color: rgb(16, 34, 233); display: none;">youuuu stoppedd meeee....!!!!</p>
+    </div>
+    <script>
+          function slideimage(){
+            var imageAdd=document.querySelector("img").src;
+            var imageNo=imageAdd.substr(imageAdd.lastIndexOf("/")+1,1);
+            imageNo++;
+            if(imageNo==6){
+                imageNo=1;
+            }
+            document.querySelector("img").setAttribute("src",imageNo+".jpg");
+            
+          }
+          var sliding;
+          function startSlide(){
+            sliding=setInterval(()=>{
+                slideimage()
+            },1000);
+            document.querySelector("p").style.display="none"
+          }
+          function stopSlide(){
+            clearInterval(sliding);
+            document.querySelector("p").style.display="block"
+          }
+          startSlide()
+    </script>
+</body>
+</html>

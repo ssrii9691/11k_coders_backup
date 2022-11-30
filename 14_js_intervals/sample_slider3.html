@@ -7,8 +7,8 @@
     <title>Document</title>
     <style>
       img {
-        width: 250px;
-        height: 150px;
+        width: 500px;
+        height: 300px;
         cursor: pointer;
       }
       div {
@@ -18,7 +18,7 @@
   </head>
   <body>
     <div>
-      <img src="1.jpeg" alt="" onmouseover="stopSlide()" onmouseout="startSlide()"/>
+      <img src="1.jpg" alt="" onmouseover="stopSlide()" onmouseout="startSlide()"/>
       <p style="color: red;display: none;">You Just Stopped the Sliding</p>
     </div>
     <script>
@@ -34,7 +34,7 @@
         }
         document
           .querySelector("img")
-          .setAttribute("src", imageNumber + ".jpeg");
+          .setAttribute("src", imageNumber + ".jpg");
       }
       var sliding;
       function startSlide() {
