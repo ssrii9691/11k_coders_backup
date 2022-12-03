@@ -1,0 +1,122 @@
+{
+  "songs": [
+    {
+      "id": "1",
+      "name": "Eminem - 'Till I Collapse (feat. Nate Dogg)",
+      "title": "'Till I Collapse ",
+      "album": {
+        "album_id": "",
+        "name": ""
+      },
+      "duration": "297",
+      "thumbnail": "https://lh3.googleusercontent.com/GJmbTYfaMrWuPSzhOAy7jGCQ70a2UN2-0moTq-uh_Prd73-Au51FDHhGteg543a7iBv1Y9SPm4huMSBS=w120-h120-s-l90-rj"
+    },
+    {
+      "id": "2",
+      "name": "Eminem - Beautiful",
+      "title": "Beautiful",
+      "artists": [
+        {
+          "artist_id": "UCedvOgsKFzcK3hA5taf3KoQ",
+          "name": "Eminem"
+        }
+      ],
+      "album": {
+        "album_id": "MPREb_VbHZG2Tt4YN",
+        "name": "Relapse (Deluxe)"
+      },
+      "duration": 392,
+      "thumbnail": "https://lh3.googleusercontent.com/uug1FXZw9zd6z8YNleGWyiKBBxvMXSBPtnTGqLJDt3mINoyUyo2s7bZocZPfDFIPEyEteOMexpbw7Q0=w120-h120-l90-rj"
+    },
+    {
+      "id": "3",
+      "name": "Eminem - 'Till I Collapse (feat. Nate Dogg)",
+      "title": "'Till I Collapse (feat. Nate Dogg)",
+      "artists": [
+        {
+          "artist_id": "UCedvOgsKFzcK3hA5taf3KoQ",
+          "name": "Eminem"
+        }
+      ],
+      "album": {
+        "album_id": "MPREb_m6898o4iV7k",
+        "name": "The Eminem Show"
+      },
+      "duration": 297,
+      "thumbnail": "https://lh3.googleusercontent.com/OHJbRg4Bino9ZrrWAJ24QEfZU6RVNOGPUAF90jtlND472g4FhFu53einDnUM5pEL4Rt26zR2YGSNfqpo=w120-h120-s-l90-rj"
+    },
+    {
+      "id": "4",
+      "name": "Eminem - Superman (feat. Dina Rae)",
+      "title": "Superman (feat. Dina Rae)",
+      "artists": [
+        {
+          "artist_id": "UCedvOgsKFzcK3hA5taf3KoQ",
+          "name": "Eminem"
+        }
+      ],
+      "album": {
+        "album_id": "MPREb_6hyn9PhqicQ",
+        "name": "The Eminem Show"
+      },
+      "duration": 350,
+      "thumbnail": "https://lh3.googleusercontent.com/GJmbTYfaMrWuPSzhOAy7jGCQ70a2UN2-0moTq-uh_Prd73-Au51FDHhGteg543a7iBv1Y9SPm4huMSBS=w120-h120-s-l90-rj"
+    },
+    {
+      "id": "5",
+      "name": "Eminem - Without Me",
+      "title": "Without Me",
+      "artists": [
+        {
+          "artist_id": "UCedvOgsKFzcK3hA5taf3KoQ",
+          "name": "Eminem"
+        }
+      ],
+      "album": {
+        "album_id": "MPREb_6hyn9PhqicQ",
+        "name": "The Eminem Show"
+      },
+      "duration": 290,
+      "thumbnail": "https://lh3.googleusercontent.com/GJmbTYfaMrWuPSzhOAy7jGCQ70a2UN2-0moTq-uh_Prd73-Au51FDHhGteg543a7iBv1Y9SPm4huMSBS=w120-h120-s-l90-rj"
+    },
+    {
+      "id": "6",
+      "name": "Eminem - The Way I Am",
+      "title": "The Way I Am",
+      "artists": [
+        {
+          "artist_id": "UCedvOgsKFzcK3hA5taf3KoQ",
+          "name": "Eminem"
+        }
+      ],
+      "album": {
+        "album_id": "MPREb_1Xjf214SdV1",
+        "name": "The Marshall Mathers LP"
+      },
+      "duration": 290,
+      "thumbnail": "https://lh3.googleusercontent.com/O-SeXg61tYo15uWSBzWPVoUlBx2mQAioidlHq3y-AurmaQZI2Vso7BJoGeDNAm2g6HquAq1z4g-1EBI=w120-h120-l90-rj"
+    },
+    {
+      "id": "7",
+      "name": "",
+      "title": "",
+      "album": {
+        "album_id": "",
+        "name": ""
+      },
+      "duration": "",
+      "thumbnail": ""
+    },
+    {
+      "id": "8",
+      "name": "",
+      "title": "",
+      "album": {
+        "album_id": "",
+        "name": ""
+      },
+      "duration": "",
+      "thumbnail": ""
+    }
+  ]
+}

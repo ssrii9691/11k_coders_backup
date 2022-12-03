@@ -1,5 +1,5 @@
 {
-  "user": [
+  "users": [
     {
       "id": 92,
       "fname": "Har",
@@ -9,16 +9,6 @@
       "city": "Hillsboro",
       "state": "NY",
       "zip": "91735"
-    },
-    {
-      "id": 93,
-      "fname": "Harold",
-      "lname": "Cardenas",
-      "tel": "(789)592-1535",
-      "address": "3100 Consequat Dr",
-      "city": "Hillsboro",
-      "state": "NY",
-      "zip": 91735
     },
     {
       "id": 94,
@@ -69,16 +59,6 @@
       "city": "Hillsboro",
       "state": "NY",
       "zip": "91735"
-    },
-    {
-      "id": 99,
-      "fname": "Richelle",
-      "lname": "Marton",
-      "tel": "(242)904-0699",
-      "address": "3067 Vestibulum Ct",
-      "city": "Danbury",
-      "state": "TN",
-      "zip": 82456
     }
   ]
 }
