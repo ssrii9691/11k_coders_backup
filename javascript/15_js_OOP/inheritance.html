@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+      class Mobile {
+        constructor() {
+          let MobileRam = "4GB";
+          this.screen = "6inch";
+          this.apps = ["Chrome", "Axisbank", "ICICI"];
+          this.showMobileInfo = function () {
+            console.log("This Some Mobile");
+          };
+        }
+      }
+
+      class MotoRola extends Mobile {
+        constructor() {
+          super();
+          this.rate = 20000;
+          this.showMobileInfo = function () {
+            console.log("This Some Mobile - MotoRola");
+          };
+        }
+      }
+
+      var Moto1 = new MotoRola();
+      var myMobile = new Mobile();
+      console.log(Moto1.showMobileInfo());
+      console.log(myMobile.showMobileInfo());
+    
+    </script>
+</body>
+</html>
