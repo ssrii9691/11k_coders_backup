@@ -21,12 +21,13 @@ export default class States extends Component{
           <h2>TFI 2021 blockbuster movie {this.state.movie}</h2> <hr />
            
             
-            <ul>{this.state.users.map((value)=>{
-                return <li>{value}</li>
+            <ul>{this.state.users.map((value,i)=>{
+                return <li key={i} >{value}</li>
             })}</ul>
+            <hr />
             <ul>
-                {Object.values(this.state.persons).map((val) => {
-                    return <li>{val}</li>
+                {Object.values(this.state.persons).map((val,i) => {
+                    return <li key={i} >{val}</li>
                 })}
                 {/* <li>{this.state.person.fname}</li>
                 <li>{this.state.person.lname}</li>
