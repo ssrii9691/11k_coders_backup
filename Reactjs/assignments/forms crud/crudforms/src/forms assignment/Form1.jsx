@@ -132,7 +132,7 @@ export default class Form1 extends Component {
             </tbody>
         </table>
 
-
+      
       </div>
     )
   }
