@@ -1,11 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
-import PersonDetails from './component/PersonDetails';
+import Checkbox_radio from './component/Checkbox_radio';
+
 
 function App() {
   return (
     <div className="App">
-      <PersonDetails/>
+      <Checkbox_radio/>
+      
     </div>
   );
 }
