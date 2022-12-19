@@ -168,5 +168,43 @@
       "phone": "",
       "password": ""
     }
+  ],
+  "registration": [
+    {
+      "id": 1,
+      "university": "",
+      "institute": "",
+      "branch": "",
+      "degree": "",
+      "status": "",
+      "averageCPI": "",
+      "thSemester": "",
+      "experience": "",
+      "yourWebsite": ""
+    },
+    {
+      "id": 2,
+      "university": "sai",
+      "institute": "yfoifhhhhh",
+      "branch": "EEE",
+      "degree": "B.Tech",
+      "status": "pursuing",
+      "averageCPI": "4",
+      "thSemester": "6",
+      "experience": "6",
+      "yourWebsite": "0"
+    },
+    {
+      "id": 4,
+      "university": "arun",
+      "institute": "anurag",
+      "branch": "EEE",
+      "degree": "B.Tech",
+      "status": "",
+      "averageCPI": "8",
+      "thSemester": "8",
+      "experience": "8",
+      "yourWebsite": "8"
+    }
   ]
 }
