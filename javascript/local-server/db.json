@@ -8,7 +8,7 @@
       "address": "3100 Consequat Dr",
       "city": "Hillsboro",
       "state": "NY",
-      "zip": "91735"
+      "zip": "91"
     },
     {
       "id": 94,
@@ -59,6 +59,114 @@
       "city": "Hillsboro",
       "state": "NY",
       "zip": "91735"
+    },
+    {
+      "id": 99,
+      "fname": "Mangali",
+      "lname": "saikumar",
+      "tel": "",
+      "address": "H.NO. 2-2-145/H/A/1 HYDERABAD ROAD TANDUR VIKARABAD",
+      "city": "Vikarabad",
+      "state": "Telangana",
+      "zip": "501141"
+    }
+  ],
+  "founder": [
+    {
+      "id": 31,
+      "email": "FCarson@amet.ly",
+      "username": "AWells",
+      "country": "Congo (Democratic Republic of the)",
+      "phone": "4930751221",
+      "password": "ZiWcO"
+    },
+    {
+      "id": 32,
+      "email": "ABarrientos@vestibulum.com",
+      "username": "SHansen",
+      "country": "Swaziland",
+      "phone": "5004996134",
+      "password": "SesMm"
+    },
+    {
+      "id": 33,
+      "email": "SSobczak@mi.gov",
+      "username": "HBias",
+      "country": "Fiji",
+      "phone": "4809198364",
+      "password": "0LxRT"
+    },
+    {
+      "id": 34,
+      "email": "LRodgers@mattis.gov",
+      "username": "SKovich",
+      "country": "Dominican Republic",
+      "phone": "5930867158",
+      "password": "cLTwf"
+    },
+    {
+      "id": 35,
+      "email": "RSchatz@vitae.org",
+      "username": "AHougland",
+      "country": "Philippines",
+      "phone": "4374927610",
+      "password": "FI92U"
+    },
+    {
+      "id": 36,
+      "email": "ETerry@dolor.gov",
+      "username": "SCone",
+      "country": "France",
+      "phone": "7306673580",
+      "password": "EogBL"
+    },
+    {
+      "id": 37,
+      "email": "YArnold@eget.org",
+      "username": "RPolenz",
+      "country": "Cuba",
+      "phone": "3708821685",
+      "password": "GoDkA"
+    },
+    {
+      "id": 38,
+      "email": "YAlarie@aliquam.com",
+      "username": "MCozad",
+      "country": "Peru",
+      "phone": "8834491523",
+      "password": "dVXP4"
+    },
+    {
+      "id": 39,
+      "email": "TVinton@eget.net",
+      "username": "AKranz",
+      "country": "Palau",
+      "phone": "9078129899",
+      "password": "Hmu5A"
+    },
+    {
+      "id": 40,
+      "email": "CGover@massa.gov",
+      "username": "GWurttemberg",
+      "country": "Cuba",
+      "phone": "8481643395",
+      "password": "aUWbt"
+    },
+    {
+      "id": 41,
+      "email": "mangalisaikumar24@gmail.com",
+      "username": "MSaikumar",
+      "country": "India",
+      "phone": "08184931077",
+      "password": "hhhhh"
+    },
+    {
+      "id": 42,
+      "email": "",
+      "username": "",
+      "country": "",
+      "phone": "",
+      "password": ""
     }
   ]
 }
