@@ -77,7 +77,7 @@ export default class Api2 extends Component {
   updateReg = () => {
     axios
       .put(
-        "http://localhost:3000/registration/" + this.state.Registration.id,
+        ("http://localhost:3000/registration/" + this.state.Registration.id),
         this.state.Registration
       )
       .then(() => {

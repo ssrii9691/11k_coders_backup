@@ -193,18 +193,54 @@
       "thSemester": "6",
       "experience": "6",
       "yourWebsite": "0"
+    }
+  ],
+  "batches": [
+    {
+      "id": 1,
+      "name": "Mangali",
+      "username": "MSaikumar",
+      "email": "lucky@gmail.com",
+      "password": "1234",
+      "confirmPassword": "jjsjsj",
+      "message": "shdhdhd",
+      "confirmpassword": "1234"
+    },
+    {
+      "id": 2,
+      "name": "",
+      "username": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "message": ""
+    },
+    {
+      "id": 3,
+      "name": "",
+      "username": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "message": ""
     },
     {
       "id": 4,
-      "university": "arun",
-      "institute": "anurag",
-      "branch": "EEE",
-      "degree": "B.Tech",
-      "status": "",
-      "averageCPI": "8",
-      "thSemester": "8",
-      "experience": "8",
-      "yourWebsite": "8"
+      "name": "",
+      "username": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "message": ""
+    },
+    {
+      "id": 5,
+      "name": "",
+      "username": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "message": "hiii"
     }
   ]
 }
