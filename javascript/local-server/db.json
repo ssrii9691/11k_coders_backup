@@ -242,5 +242,25 @@
       "confirmPassword": "",
       "message": "hiii"
     }
+  ],
+  "coach": [
+    {
+      "id": 1,
+      "username": "",
+      "password": "",
+      "emailaddress": "",
+      "dateOfbirth": "",
+      "height": "",
+      "weight": ""
+    },
+    {
+      "id": 2,
+      "username": "",
+      "password": "",
+      "emailaddress": "",
+      "dateOfbirth": "",
+      "height": "",
+      "weight": ""
+    }
   ]
 }
