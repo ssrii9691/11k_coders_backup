@@ -8,7 +8,7 @@
       "address": "3100 Consequat Dr",
       "city": "Hillsboro",
       "state": "NY",
-      "zip": "91"
+      "zip": "90"
     },
     {
       "id": 94,
@@ -66,7 +66,7 @@
       "lname": "saikumar",
       "tel": "",
       "address": "H.NO. 2-2-145/H/A/1 HYDERABAD ROAD TANDUR VIKARABAD",
-      "city": "Vikarabad",
+      "city": "vkb",
       "state": "Telangana",
       "zip": "501141"
     }
@@ -243,24 +243,5 @@
       "message": "hiii"
     }
   ],
-  "coach": [
-    {
-      "id": 1,
-      "username": "",
-      "password": "",
-      "emailaddress": "",
-      "dateOfbirth": "",
-      "height": "",
-      "weight": ""
-    },
-    {
-      "id": 2,
-      "username": "",
-      "password": "",
-      "emailaddress": "",
-      "dateOfbirth": "",
-      "height": "",
-      "weight": ""
-    }
-  ]
+  "coach": []
 }
