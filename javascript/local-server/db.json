@@ -77,25 +77,9 @@
       "id": 40,
       "email": "CGover@massa.gov",
       "username": "GWurttemberg",
-      "country": "Cuba",
+      "country": "india",
       "phone": "8481643395",
       "password": "aUWbt"
-    },
-    {
-      "id": 41,
-      "email": "mangalisaikumar24@gmail.com",
-      "username": "MSaikumar",
-      "country": "India",
-      "phone": "08184931077",
-      "password": "hhhhh"
-    },
-    {
-      "id": 42,
-      "email": "",
-      "username": "",
-      "country": "",
-      "phone": "",
-      "password": ""
     }
   ],
   "registration": [
