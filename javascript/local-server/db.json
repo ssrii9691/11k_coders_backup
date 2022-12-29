@@ -1,14 +1,21 @@
 {
-  "users": [],
-  "founder": [
+  "users": [
     {
-      "id": 31,
-      "email": "FCarson@amet.ly",
-      "username": "AWells",
-      "country": "Congo (Democratic Republic of the)",
-      "phone": "4930751221",
-      "password": "ZiWcO"
+      "email": "",
+      "password": "",
+      "fname": "",
+      "lname": "",
+      "id": 1
     },
+    {
+      "email": "",
+      "password": "",
+      "fname": "",
+      "lname": "",
+      "id": 2
+    }
+  ],
+  "founder": [
     {
       "id": 32,
       "email": "ABarrientos@vestibulum.com",
@@ -80,6 +87,22 @@
       "country": "india",
       "phone": "8481643395",
       "password": "aUWbt"
+    },
+    {
+      "id": 41,
+      "username": "",
+      "email": "lucky@gmail.com",
+      "country": "India",
+      "phone": "08184931077",
+      "password": ""
+    },
+    {
+      "id": 42,
+      "username": "",
+      "email": "ssri9691@gmail.com",
+      "country": "India",
+      "phone": "08184931077",
+      "password": "hshhsd"
     }
   ],
   "registration": [

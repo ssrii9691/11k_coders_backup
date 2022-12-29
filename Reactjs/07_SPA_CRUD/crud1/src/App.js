@@ -1,12 +1,12 @@
 
 import "./App.css";
-import Users from "./Component/Users";
+import Users from "./component/Users";
 import {BrowserRouter,Route,Routes,} from 'react-router-dom'
-import Layout from "./Component/Layout";
-import EditUser from "./Component/EditUser";
-import Deleteuser from "./Component/Deleteuser";
-import CreateUser from "./Component/CreateUser";
-import Navbar from "./Component/Navbar";
+import Layout from "./component/Layout";
+import EditUser from "./component/EditUser";
+import Deleteuser from "./component/Deleteuser";
+import CreateUser from "./component/CreateUser";
+import Navbar from "./component/Navbar";
 function App() {
   return (
     

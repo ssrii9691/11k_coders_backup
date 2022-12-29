@@ -6,11 +6,11 @@ const User = ({ usr }) => {
   const handleDelete = (usr) => {
     console.log(usr);
 
-    navigate('/delete/'+usr.id)
+    navigate("/delete/" + usr.id);
   };
-  const hanldeEdit = (usr)=>{
-    navigate('/edit/'+usr.id)
-  }
+  const hanldeEdit = (usr) => {
+    navigate("/edit/" + usr.id);
+  };
   return (
     <tr>
       <td>{usr.id}</td>
@@ -19,7 +19,14 @@ const User = ({ usr }) => {
       <td>{usr.email}</td>
       <td>{usr.password}</td>
       <td>
-        <button className="btn btn-warning" onClick={()=>{hanldeEdit(usr)}}>Edit</button>
+        <button
+          className="btn btn-warning"
+          onClick={() => {
+            hanldeEdit(usr);
+          }}
+        >
+          Edit
+        </button>
       </td>
       <td>
         <button
