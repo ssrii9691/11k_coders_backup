@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addPersonAction } from "../store/Actions";
+import { addPersonAction } from "../store/Action";
 import PersonsTable from "./PersonsTable";
+
 
 class Person extends Component {
   constructor(props) {
@@ -80,7 +81,7 @@ class Person extends Component {
             </form>
           </div>
           <div className="col-8">
-            <PersonsTable />
+            <PersonsTable/>
           </div>
         </div>
       </div>
