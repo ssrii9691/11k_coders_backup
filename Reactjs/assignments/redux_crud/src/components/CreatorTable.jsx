@@ -6,6 +6,8 @@ import Creator from './Creator';
  class creatorTable extends Component {
   render() {
     const {creators}=this.props;
+
+   
     return (
       <div>
          <table className="table">
