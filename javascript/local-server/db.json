@@ -1,18 +1,16 @@
 {
   "users": [
     {
-      "email": "",
-      "password": "",
-      "fname": "",
-      "lname": "",
-      "id": 1
+      "id": 1,
+      "fname": "Mangali",
+      "lname": "saikumar",
+      "email": "lucky@gmail.com"
     },
     {
-      "email": "",
-      "password": "",
-      "fname": "",
-      "lname": "",
-      "id": 2
+      "id": 2,
+      "fname": "maheshwari",
+      "lname": "shwari",
+      "email": "ssri9691@gmail.com"
     }
   ],
   "founder": [
