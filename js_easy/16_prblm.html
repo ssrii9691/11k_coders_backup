@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getCharacterCount(char, str) {
+  // Initialize a count variable to 0
+  let count = 0;
+
+  // Loop through the string and check if each character
+  // matches the one we're looking for
+  for (const c of str) {
+    if (c === char) {
+      count += 1;
+    }
+  }
+
+  // Return the count
+  return count;
+}
+const char = 'a';
+const str = 'A';
+const count = getCharacterCount(char, str);
+console.log(count); // Output: 2
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numbers=[2,1,0,3,4,5,6,7,8,9]
+        function phoneNumber(numbers){
+           var partone=""
+           var parttwo=""
+           var partthree=""
+
+           for(var i=0;i<numbers.length;i++){
+            if(i<3){
+                partone+=numbers[i].toString()
+            }
+            else if(i>=3&&i<6){
+                parttwo+=numbers[i].toString();
+            }
+            else if(i>=6){
+                partthree+=numbers[i].toString();
+            }
+           }
+           return `(${partone}) ${parttwo}-${partthree}`
+        }
+        document.write(phoneNumber(numbers))
+    </script>
+</body>
+</html>
