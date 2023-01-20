@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ***************** ADDITION OF ARRAY Element ********************
+
+      // let arr = [1,2,3,4,5,3,2]
+      // function mySum(){
+      //   let output = arr.reduce((acc,curr)=> acc+curr)
+      //   console.log("the total sum  of array is : ",output)
+      // }
+      // mySum()
+
+      // **************** COUNTING THE OCCURANCE OF THE ITEM IN ARRAY******************
+
+      // let arr = [1,2,3,4,5,3,2]
+      // function reapetNum(){
+      //   let output = arr.reduce((acc,curr)=>{
+      //     if(!acc[curr]){
+      //       acc[curr] = 1
+      //     }
+      //     else{
+      //       acc[curr]++
+      //     }
+      //     return acc
+      //   },{})
+      //   console.log(output)
+      // }
+      // reapetNum()
+
+      // **************** SPECIAL CASE ADDITION IN ARRAYS ***********************
+
+      // let data = 5321;
+      // function addNum() {
+      //   let convertToString = "" + data;
+      //   console.log(convertToString);
+      //   console.log(typeof convertToString);
+      //   let convertToArray = convertToString.split("");
+      //   console.log(convertToArray);
+      //   let output = convertToArray.map((data) => parseInt(data));
+      //   console.log(output);
+      //   let finalOutput = output.reduce((a, b) => a + b);
+      //   console.log(finalOutput);
+
+      //   if (finalOutput > 10) {
+      //     console.log("this is greater than ten");
+      //     let toString = ""+finalOutput
+      //     let toArray = toString.split("").map((finalOutput)=> parseInt(finalOutput))
+      //     let nestedOutput = toArray.reduce((a, b) => a + b);
+      //     console.log(nestedOutput);
+      //   }
+      //   else{
+      //     console.log(finalOutput)
+      //   }
+      // }
+      // addNum();
+
+      // **************** SPECIAL CASE ADDITION IN ARRAYS ***********************
+
+      //     let data=[5,3,2]
+      // function myFunc(data){
+      //   let mySum = data.reduce((a,b)=> a+b)
+      //   console.log(mySum)
+      //   if(mySum > 10){
+      //     let toString = ""+mySum
+      //     let toArray = toString.split("").map((item)=> parseInt(item))
+      //     let finalOutput = toArray.reduce((a,b)=> a+b)
+      //     console.log(finalOutput)
+      //   }
+      //   else{
+      //     console.log(mySum)
+      //   }
+      // }
+      // myFunc(data)
+
+      // ******** ARRANGING THE ARRAY IN ASCENDING AND DESENDING  ORDER ************
+
+      // let array = [1, 2, 5, 4, 2, 1, 5, 3, 6, 5];
+
+      // let output = [...new Set(array)];
+      // console.log(output);
+
+      //  method -1
+
+      //  ascending order
+
+      // let finaloutput = output.sort((a,b)=> a-b)
+      // console.log(finaloutput)
+
+      //  desending order
+
+      // let finaloutput = output.sort((a,b)=> b-a)
+      // console.log(finaloutput)
+
+      //                   method -2
+
+      // for (let i = 0; i < output.length; i++) {
+      //   for (let j = i + 1; j < output.length; j++) {
+      //     if (output[i] > output[j]) {
+      //       let side = output[i];
+      //       output[i] = output[j];
+      //       output[j] = side;
+      //     }
+      //   }
+      // }
+      // console.log(output);
+
+      // // desending order
+      // for (let i = 0; i < output.length; i++) {
+      //   for (let j = i + 1; j < output.length; j++) {
+      //     if (output[i] < output[j]) {
+      //       let side = output[i];
+      //       output[i] = output[j];
+      //       output[j] = side;
+      //     }
+      //   }
+      // }
+      // console.log(output);
+
+      // ******************** CALL BIND APPLY***************************
+
+      // let name = {
+      //   fname:"Arun",
+      //   lname:"kumar"
+
+      // }
+      // let printFullName = function (hometown,state){
+      //   console.log(this.fname + " "+ this.lname +" from "+ hometown+","+state)
+      // }
+
+      // printFullName.call(name,"sadasivpet","hyderabad")
+      // printFullName.apply(name,["sadasivpet","hyderabad"])
+
+      // let fullname = printFullName.bind(name,"sadasivpet","hyderabad")
+      // // console.log(fullname)
+      // fullname()
+
+      // function test(){
+      //   console.log(x)
+      //   console.log(y)
+      //   var y=10
+      //   let x=5
+      // }
+      // test()
+
+      // *********************CAPITALIZE FIRST LETTER IN GIVEN ARRAY ********************
+
+      // let days = ["monday","tuesday","wednesday"]
+      // let output = days.map((a)=>a.charAt(0).toUpperCase() + a.substr(1))
+      // console.log(output)
+
+      // reversing the given array
+      // let inputArray = [11, 2, 3, 4, 5];
+      // function reverseArray(inputArray) {
+      //   var outputArray = [];
+      //   for (var i = inputArray.length - 1; i >= 0; i--) {
+      //     // console.log(inputArray[i]);
+      //     outputArray.push(inputArray[i]);
+      //   }
+      //   console.log(outputArray);
+      // }
+      // reverseArray(inputArray);
+
+      // ********************REMOVEING THE DUPLICATES************************
+
+      // let array = [11,2,3,11,3,2,5]
+      // function removeDup(array){
+
+      //   // first method
+
+      // let remove = [...new Set(array)]
+      // console.log(remove)
+
+      //   // second method
+      //     let unique = array.filter((item,pos)=>{
+      //       return array.indexOf(item) == pos
+      //     })
+      //     console.log(unique)
+      // }
+      // removeDup(array)
+
+      // ***************REVERSE THE NUMBER ***********************
+      // let number = 1234;
+      // let convertTostring = "" + number;
+      // let toArray = convertTostring.split("").map((a) => parseInt(a));
+      // console.log(toArray)
+
+      // /************/ first method  *********
+
+      // for(let i= 0 ;i<toArray.length ; i++){
+      //   // console.log(toArray[i])
+      //   for(let j= i+1; j<toArray.length ; j++){
+      //     // console.log(toArray[j])
+      //     if( toArray[i] < toArray[j]){
+      //       let mySide = toArray[i]
+      //       toArray[i] = toArray[j]
+      //       toArray[j] = mySide
+      //     }
+      //   }
+      // }
+      // console.log(toArray)
+      // let output = toArray.join("")
+      // console.log(output)
+
+      // ***********second method ****************
+      // let outputArray = [];
+      // for (let i = toArray.length -1 ; i >= 0; i--) {
+      //   outputArray.push(toArray[i]);
+      // }
+      // let finalOutput =  outputArray.join("")
+      // console.log(outputArray);
+      // console.log(finalOutput);
+
+      // ************** SUM OF ElEMENTS EQUAL TO PEAK ELEMEMT IN  ARAAY***********************
+
+      // let array = [6, 2, -1, 4, 11];
+      // let peak = array[0];
+      // let total = 0;
+      // function equal(array) {
+      //  method -1
+
+      // for (let i = 0; i < array.length; i++) {
+      //   total += array[i];
+
+      //   if (array[i] > peak) {
+      //     peak = array[i];
+      //   }
+      // }
+      // // return total - peak == peak
+
+      // // console.log(total)
+      // // console.log(peak)
+      // console.log(peak);
+
+      // ********************HIGHEST ELEMENT IN ARRAY **********************
+
+      // let output = array.forEach((item) => {
+      //   if (item > peak) {
+      //     peak = item;
+      //   }
+      // });
+      // // console.log(total);
+      // console.log(peak);
+      // }
+      // console.log(equal(array));
+      // equal(array);
+
+      // ************************REVERSE THE STRING *************************
+
+      // let str = "arunkumar";
+      // function reverseStr(str) {
+      //   // ****************method -1 *****************
+
+      //   // let output = str.split("").reverse().join("")
+      //   // console.log(output)
+
+      //   // ******************method -2 ******************
+      //   let toArray = str.split("");
+      //   console.log(toArray);
+      //   let reverse = toArray.reverse();
+      //   console.log(reverse);
+      //   let reverseStr = reverse.join("");
+      //   console.log(reverseStr);
+      // }
+      // reverseStr(str);
+
+      // *********************fibonacci series *************************
+
+      // let number = 5;
+      // const fibonacciSeries = (number) => {
+      //   let num1 = 0;
+      //   let num2 = 1;
+      //   let nextNum;
+
+      //   for (let i = 1; i <= number; i++) {
+      //     // console.log(i)
+      //     console.log(num1);
+      //     nextNum = num1 + num2;
+      //     num1 = num2;
+      //     num2 = nextNum;
+      //   }
+      // };
+      // fibonacciSeries(number);
+
+  
+     
+
+     
+    </script>
+  </body>
+</html>
